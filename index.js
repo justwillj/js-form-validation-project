@@ -7,3 +7,7 @@ const containNumber = (value) => {
 const whiteSpaceCheck = (value) => {
   return /\s/.test(value);
 };
+const specialCharCheck = (value) => {
+  let specialCharacter = /(?=.*[!@#$%^&*])/;
+  return specialCharacter.test(value);
+};
