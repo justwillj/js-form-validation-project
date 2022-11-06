@@ -39,12 +39,14 @@ const storeVariables = () => {
   let errorUlThree = document.createElement("ul");
   let errorUlFour = document.createElement("ul");
   let errorUlFive = document.createElement("ul");
+  let errorUlSix = document.createElement("ul");
   //error messages for each of the different functions
   let errorRequiredCheck = document.createElement("li");
   let errorLetterCheck = document.createElement("li");
   let errorUserLetterCheck = document.createElement("li");
   let errorNumberCheck = document.createElement("li");
   let errorUserLengthCheck = document.createElement("li");
+  let errorLengthCheck = document.createElement("li");
 
   const requiredCheck = (value, errorDiv) => {
     if (whiteSpaceCheck(value) === true || value === "") {
@@ -92,6 +94,16 @@ const storeVariables = () => {
         "Username fields must contain at least 8 characters.";
       errorUlFive.appendChild(errorUserLengthCheck);
       errorDiv.appendChild(errorUlFive);
+      event.preventDefault();
+    }
+  };
+
+  const lengthCheck = (value, number, errorDiv) => {
+    if (value.length < number && value !== "") {
+      errorLengthCheck.innerHTML =
+        "Required_size field lengths must exactly match the minlength attribute of that field.";
+      errorUlSix.appendChild(errorLengthCheck);
+      errorDiv.appendChild(errorUlSix);
       event.preventDefault();
     }
   };
