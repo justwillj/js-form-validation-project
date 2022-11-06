@@ -40,6 +40,7 @@ const storeVariables = () => {
   let errorUlFour = document.createElement("ul");
   let errorUlFive = document.createElement("ul");
   let errorUlSix = document.createElement("ul");
+  let errorUlSeven = document.createElement("ul");
   //error messages for each of the different functions
   let errorRequiredCheck = document.createElement("li");
   let errorLetterCheck = document.createElement("li");
@@ -47,7 +48,7 @@ const storeVariables = () => {
   let errorNumberCheck = document.createElement("li");
   let errorUserLengthCheck = document.createElement("li");
   let errorLengthCheck = document.createElement("li");
-
+  let errorPasswordCheck = document.createElement("li");
   const requiredCheck = (value, errorDiv) => {
     if (whiteSpaceCheck(value) === true || value === "") {
       errorRequiredCheck.innerHTML =
@@ -104,6 +105,37 @@ const storeVariables = () => {
         "Required_size field lengths must exactly match the minlength attribute of that field.";
       errorUlSix.appendChild(errorLengthCheck);
       errorDiv.appendChild(errorUlSix);
+      event.preventDefault();
+    }
+  };
+
+  const passwordCheck = (value, errorDiv) => {
+    if (value.search(/[a-z]/) < 0 && value !== "") {
+      errorPasswordCheck.innerHTML =
+        "Password fields must contain one or more of each of the following types: uppercase letters, lowercase letters, numbers, special characters.";
+      errorUlSeven.appendChild(errorPasswordCheck);
+      errorDiv.appendChild(errorUlSeven);
+      event.preventDefault();
+      // Checks for uppercase
+    } else if (value.search(/[A-Z]/) < 0 && value !== "") {
+      errorPasswordCheck.innerHTML =
+        "Password fields must contain one or more of each of the following types: uppercase letters, lowercase letters, numbers, special characters.";
+      errorUlSeven.appendChild(errorPasswordCheck);
+      errorDiv.appendChild(errorUlSeven);
+      event.preventDefault();
+      // Checks for number
+    } else if (value.search(/[0-9]/) < 0 && value !== "") {
+      errorPasswordCheck.innerHTML =
+        "Password fields must contain one or more of each of the following types: uppercase letters, lowercase letters, numbers, special characters.";
+      errorUlSeven.appendChild(errorPasswordCheck);
+      errorDiv.appendChild(errorUlSeven);
+      event.preventDefault();
+      // Checks for special character
+    } else if (specialCharCheck(value) === false && value !== "") {
+      errorPasswordCheck.innerHTML =
+        "Password fields must contain one or more of each of the following types: uppercase letters, lowercase letters, numbers, special characters.";
+      errorUlSeven.appendChild(errorPasswordCheck);
+      errorDiv.appendChild(errorUlSeven);
       event.preventDefault();
     }
   };
