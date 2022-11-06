@@ -36,9 +36,11 @@ const storeVariables = () => {
   // create error elements
   let errorUlOne = document.createElement("ul");
   let errorUlTwo = document.createElement("ul");
+  let errorUlThree = document.createElement("ul");
   //error messages for each of the different functions
   let errorRequiredCheck = document.createElement("li");
   let errorLetterCheck = document.createElement("li");
+  let errorUserLetterCheck = document.createElement("li");
 
   const requiredCheck = (value, errorDiv) => {
     if (whiteSpaceCheck(value) === true || value === "") {
@@ -56,6 +58,16 @@ const storeVariables = () => {
         "Alphabetic fields must be a series of alphabetic characters.";
       errorUlTwo.appendChild(errorLetterCheck);
       errorDiv.appendChild(errorUlTwo);
+      event.preventDefault();
+    }
+  };
+
+  const userNameletterCheck = (value, errorDiv) => {
+    if (containLetters(value) === false && value !== "") {
+      errorUserLetterCheck.innerHTML =
+        "Username fields must contain only alphanumeric characters.";
+      errorUlThree.appendChild(errorUserLetterCheck);
+      errorDiv.appendChild(errorUlThree);
       event.preventDefault();
     }
   };
