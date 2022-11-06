@@ -42,6 +42,7 @@ const storeVariables = () => {
   let errorUlSix = document.createElement("ul");
   let errorUlSeven = document.createElement("ul");
   let errorUlEight = document.createElement("ul");
+  let errorUlNine = document.createElement("ul");
   //error messages for each of the different functions
   let errorRequiredCheck = document.createElement("li");
   let errorLetterCheck = document.createElement("li");
@@ -51,6 +52,7 @@ const storeVariables = () => {
   let errorLengthCheck = document.createElement("li");
   let errorPasswordCheck = document.createElement("li");
   let errorPhoneCheck = document.createElement("li");
+  let errorDateCheck = document.createElement("li");
   const requiredCheck = (value, errorDiv) => {
     if (whiteSpaceCheck(value) === true || value === "") {
       errorRequiredCheck.innerHTML =
@@ -149,6 +151,17 @@ const storeVariables = () => {
         "Phone fields must match the format of XXX-XXX-XXXX.";
       errorUlEight.appendChild(errorPhoneCheck);
       errorDiv.appendChild(errorUlEight);
+      event.preventDefault();
+    }
+  };
+
+  const dateCheck = (value, errorDiv) => {
+    let dateCheck = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/;
+    if (dateCheck.test(value) === false && value !== "") {
+      errorDateCheck.innerHTML =
+        "Date fields must match the format of XX/XX/XXXX.";
+      errorUl8.appendChild(errorDateCheck);
+      errorDiv.appendChild(errorUl8);
       event.preventDefault();
     }
   };
