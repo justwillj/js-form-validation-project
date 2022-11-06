@@ -32,4 +32,20 @@ const specialCharCheck = (value) => {
   return specialCharacter.test(value);
 };
 
-const storeVariables = () => {};
+const storeVariables = () => {
+  // create error elements
+  let errorUlOne = document.createElement("ul");
+
+  //error messages for each of the different functions
+  let errorRequiredCheck = document.createElement("li");
+
+  const requiredCheck = (value, errorDiv) => {
+    if (whiteSpaceCheck(value) === true || value === "") {
+      errorRequiredCheck.innerHTML =
+        "Required fields must have a value that is not empty or whitespace.";
+      errorUlOne.appendChild(errorRequiredCheck);
+      errorDiv.appendChild(errorUlOne);
+      event.preventDefault();
+    }
+  };
+};
