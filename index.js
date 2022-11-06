@@ -31,3 +31,5 @@ const specialCharCheck = (value) => {
   let specialCharacter = /(?=.*[!@#$%^&*])/;
   return specialCharacter.test(value);
 };
+
+const storeVariables = () => {};
