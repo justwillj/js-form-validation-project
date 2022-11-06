@@ -35,9 +35,10 @@ const specialCharCheck = (value) => {
 const storeVariables = () => {
   // create error elements
   let errorUlOne = document.createElement("ul");
-
+  let errorUlTwo = document.createElement("ul");
   //error messages for each of the different functions
   let errorRequiredCheck = document.createElement("li");
+  let errorLetterCheck = document.createElement("li");
 
   const requiredCheck = (value, errorDiv) => {
     if (whiteSpaceCheck(value) === true || value === "") {
@@ -45,6 +46,16 @@ const storeVariables = () => {
         "Required fields must have a value that is not empty or whitespace.";
       errorUlOne.appendChild(errorRequiredCheck);
       errorDiv.appendChild(errorUlOne);
+      event.preventDefault();
+    }
+  };
+
+  const letterCheck = (value, errorDiv) => {
+    if (containLetters(value) === false && value !== "") {
+      errorLetterCheck.innerHTML =
+        "Alphabetic fields must be a series of alphabetic characters.";
+      errorUlTwo.appendChild(errorLetterCheck);
+      errorDiv.appendChild(errorUlTwo);
       event.preventDefault();
     }
   };
