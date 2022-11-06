@@ -41,6 +41,7 @@ const storeVariables = () => {
   let errorUlFive = document.createElement("ul");
   let errorUlSix = document.createElement("ul");
   let errorUlSeven = document.createElement("ul");
+  let errorUlEight = document.createElement("ul");
   //error messages for each of the different functions
   let errorRequiredCheck = document.createElement("li");
   let errorLetterCheck = document.createElement("li");
@@ -49,6 +50,7 @@ const storeVariables = () => {
   let errorUserLengthCheck = document.createElement("li");
   let errorLengthCheck = document.createElement("li");
   let errorPasswordCheck = document.createElement("li");
+  let errorPhoneCheck = document.createElement("li");
   const requiredCheck = (value, errorDiv) => {
     if (whiteSpaceCheck(value) === true || value === "") {
       errorRequiredCheck.innerHTML =
@@ -136,6 +138,17 @@ const storeVariables = () => {
         "Password fields must contain one or more of each of the following types: uppercase letters, lowercase letters, numbers, special characters.";
       errorUlSeven.appendChild(errorPasswordCheck);
       errorDiv.appendChild(errorUlSeven);
+      event.preventDefault();
+    }
+  };
+
+  const phoneNumberCheck = (value, errorDiv) => {
+    let phoneCheck = /^(?:\(\d{3}\)|\d{3}-)\d{3}-\d{4}$/;
+    if (!value.match(phoneCheck) && value !== "") {
+      errorPhoneCheck.innerHTML =
+        "Phone fields must match the format of XXX-XXX-XXXX.";
+      errorUlEight.appendChild(errorPhoneCheck);
+      errorDiv.appendChild(errorUlEight);
       event.preventDefault();
     }
   };
