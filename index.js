@@ -38,11 +38,13 @@ const storeVariables = () => {
   let errorUlTwo = document.createElement("ul");
   let errorUlThree = document.createElement("ul");
   let errorUlFour = document.createElement("ul");
+  let errorUlFive = document.createElement("ul");
   //error messages for each of the different functions
   let errorRequiredCheck = document.createElement("li");
   let errorLetterCheck = document.createElement("li");
   let errorUserLetterCheck = document.createElement("li");
   let errorNumberCheck = document.createElement("li");
+  let errorUserLengthCheck = document.createElement("li");
 
   const requiredCheck = (value, errorDiv) => {
     if (whiteSpaceCheck(value) === true || value === "") {
@@ -80,6 +82,16 @@ const storeVariables = () => {
         "Numeric fields must be a series of numbers.";
       errorUlFour.appendChild(errorNumberCheck);
       errorDiv.appendChild(errorUlFour);
+      event.preventDefault();
+    }
+  };
+
+  const userNameLengthCheck = (value, number, errorDiv) => {
+    if (value.length < number && value !== "") {
+      errorUserLengthCheck.innerHTML =
+        "Username fields must contain at least 8 characters.";
+      errorUlFive.appendChild(errorUserLengthCheck);
+      errorDiv.appendChild(errorUlFive);
       event.preventDefault();
     }
   };
