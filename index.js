@@ -155,11 +155,12 @@ const storeVariables = () => {
   };
 
   /**
-   * Checks the input value for the password class to make sure it contains one of the following: Lower case, Upper Case, Number, Special Character
+   * Checks the input value for the password class to make sure it contains one of the following: Lowercase, Uppercase, Number, Special Character
    * @param {string} value - The input string value for the input box the user is working on
    * @param {HTMLElement} errorDiv - The error div above the form the user is working on
    */
   const passwordCheck = (value, errorDiv) => {
+    // Checks for lowercase
     if (value.search(/[a-z]/) < 0 && value !== "") {
       errorPasswordCheck.innerHTML =
         "Password fields must contain one or more of each of the following types: uppercase letters, lowercase letters, numbers, special characters.";
@@ -190,6 +191,11 @@ const storeVariables = () => {
     }
   };
 
+  /**
+   * Checks through the input value for the phone class to make sure the format is correct
+   * @param {string} value -The input string value for the input box the user is working on
+   * @param {HTMLElement} errorDiv - The error div above the form the user is working on
+   */
   const phoneNumberCheck = (value, errorDiv) => {
     let phoneCheck = /^(?:\(\d{3}\)|\d{3}-)\d{3}-\d{4}$/;
     if (!value.match(phoneCheck) && value !== "") {
