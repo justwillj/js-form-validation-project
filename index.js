@@ -165,4 +165,6 @@ const storeVariables = () => {
       event.preventDefault();
     }
   };
+
+  const formValidationCheck = (event) => {};
 };
