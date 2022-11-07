@@ -125,7 +125,10 @@ const storeVariables = () => {
    * @param {HTMLElement} errorDiv - The error div above the form the user is working on
    */
   const userNameLengthCheck = (value, number, errorDiv) => {
-    if (value.length < number && value !== "") {
+    if (
+      (value.length < number && value !== "") ||
+      whiteSpaceCheck(value) === true
+    ) {
       errorUserLengthCheck.innerHTML =
         "Username fields must contain at least 8 characters.";
       errorUlFive.appendChild(errorUserLengthCheck);
