@@ -212,7 +212,10 @@ const storeVariables = () => {
    */
   const phoneNumberCheck = (value, errorDiv) => {
     let phoneCheck = /^(?:\(\d{3}\)|\d{3}-)\d{3}-\d{4}$/;
-    if (!value.match(phoneCheck) && value !== "") {
+    if (
+      (!value.match(phoneCheck) && value !== "") ||
+      whiteSpaceCheck(value) === true
+    ) {
       errorPhoneCheck.innerHTML =
         "Phone fields must match the format of XXX-XXX-XXXX.";
       errorUlEight.appendChild(errorPhoneCheck);
