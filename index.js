@@ -107,6 +107,11 @@ const storeVariables = () => {
     }
   };
 
+  /**
+   * Checks the input value of the numeric class to make sure that the value contains numbers
+   * @param {string} value - The input string value for the input box the user is working on
+   * @param {HTMLElement} errorDiv - The error div above the form the user is working on
+   */
   const numberCheck = (value, errorDiv) => {
     if (containNumber(value) === false && value !== "") {
       errorNumberCheck.innerHTML =
