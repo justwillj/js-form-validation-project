@@ -83,7 +83,7 @@ const storeVariables = () => {
    * @param {HTMLElement} errorDiv - The error div above the form the user is working on
    */
   const letterCheck = (value, errorDiv) => {
-    if (containLetters(value) === false && value !== "") {
+    if (!/^[a-zA-Z]*$/g.test(value) && value !== "") {
       errorLetterCheck.innerHTML =
         "Alphabetic fields must be a series of alphabetic characters.";
       errorUlTwo.appendChild(errorLetterCheck);
@@ -113,7 +113,7 @@ const storeVariables = () => {
    * @param {HTMLElement} errorDiv - The error div above the form the user is working on
    */
   const numberCheck = (value, errorDiv) => {
-    if (containNumber(value) === false && value !== "") {
+    if (!/^[0-9]+$/.test(value) && value !== "") {
       errorNumberCheck.innerHTML =
         "Numeric fields must be a series of numbers.";
       errorUlFour.appendChild(errorNumberCheck);
