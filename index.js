@@ -31,6 +31,14 @@ const specialCharCheck = (value) => {
   let specialCharacter = /(?=.*[!@#$%^&*])/;
   return specialCharacter.test(value);
 };
+/**
+ * Checks through the input value too see if it contains alphanumeric or not
+ * @param {string} value - The input string of the form the user is working on
+ * @returns - Gives a true of false value based off if there is alphanumeric value or not
+ */
+const containAlphanumeric = (value) => {
+  return /^[a-z0-9]+$/i.test(value);
+};
 
 const storeVariables = () => {
   // create error elements
@@ -69,6 +77,11 @@ const storeVariables = () => {
     }
   };
 
+  /**
+   * Checks the input value of the alphabetic class to make sure it contains letters or not
+   * @param {string} value - The input string value for the input box the user is working on
+   * @param {HTMLElement} errorDiv - The error div above the form the user is working on
+   */
   const letterCheck = (value, errorDiv) => {
     if (containLetters(value) === false && value !== "") {
       errorLetterCheck.innerHTML =
@@ -79,8 +92,13 @@ const storeVariables = () => {
     }
   };
 
+  /**
+   * Checks the input value of the username class to make sure it only has alphanumeric values
+   * @param {string} value - The input string value for the input box the user is working on
+   * @param {HTMLElement} errorDiv - The error div above the form the user is working on
+   */
   const userNameLetterCheck = (value, errorDiv) => {
-    if (containLetters(value) === false && value !== "") {
+    if (containAlphanumeric(value) === false && value !== "") {
       errorUserLetterCheck.innerHTML =
         "Username fields must contain only alphanumeric characters.";
       errorUlThree.appendChild(errorUserLetterCheck);
