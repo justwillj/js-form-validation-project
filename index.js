@@ -225,75 +225,81 @@ const storeVariables = () => {
 
   const formValidationCheck = (event) => {};
 
-  document.querySelectorAll("input[type=submit]").forEach(function (element) {
-    element.addEventListener("click", function (element) {
-      let currentForm = element.target.closest("form");
-      currentForm.addEventListener("submit", formValidationCheck);
+  // Detect which form is the closest to the validate button the user clicks on
+  document.querySelectorAll("input[type=submit]").forEach(
+    (formGrab = (element) => {
+      element.addEventListener(
+        "click",
+        (formAdd = (element) => {
+          let currentForm = element.target.closest("form");
+          currentForm.addEventListener("submit", formValidationCheck);
 
-      //grabs classes of that form the user clicks on
-      let testRequired = currentForm.querySelectorAll(".required");
-      let testAlphabetic = currentForm.querySelectorAll(".alphabetic");
-      let testUserName = currentForm.querySelectorAll(".username");
-      let testPassword = currentForm.querySelectorAll(".password");
-      let testNumeric = currentForm.querySelectorAll(".numeric");
-      let testSize = currentForm.querySelectorAll(".required_size");
-      let testPhone = currentForm.querySelectorAll(".phone");
-      let testDate = currentForm.querySelectorAll(".date");
+          //grabs classes of that form the user clicks on
+          let testRequired = currentForm.querySelectorAll(".required");
+          let testAlphabetic = currentForm.querySelectorAll(".alphabetic");
+          let testUserName = currentForm.querySelectorAll(".username");
+          let testPassword = currentForm.querySelectorAll(".password");
+          let testNumeric = currentForm.querySelectorAll(".numeric");
+          let testSize = currentForm.querySelectorAll(".required_size");
+          let testPhone = currentForm.querySelectorAll(".phone");
+          let testDate = currentForm.querySelectorAll(".date");
 
-      // Displays the error messages into the current placement
-      let formError =
-        currentForm.parentElement.getElementsByClassName("errors")[0];
+          // Displays the error messages into the current placement
+          let formError =
+            currentForm.parentElement.getElementsByClassName("errors")[0];
 
-      //Loops through the required class and run the validation test on it
-      for (let i = 0; i < testRequired.length; i++) {
-        let values = testRequired[i].value;
-        requiredCheck(values, formError);
-      }
+          //Loops through the required class and run the validation test on it
+          for (let i = 0; i < testRequired.length; i++) {
+            let values = testRequired[i].value;
+            requiredCheck(values, formError);
+          }
 
-      //Loops through the alphabetic class and run the validation test on it
-      for (let i = 0; i < testAlphabetic.length; i++) {
-        let values = testAlphabetic[i].value;
-        letterCheck(values, formError);
-      }
+          //Loops through the alphabetic class and run the validation test on it
+          for (let i = 0; i < testAlphabetic.length; i++) {
+            let values = testAlphabetic[i].value;
+            letterCheck(values, formError);
+          }
 
-      //Loops through the username class and run the validation test on it
-      for (let i = 0; i < testUserName.length; i++) {
-        let values = testUserName[i].value;
-        userNameLengthCheck(values, 8, formError);
-        userNameLetterCheck(values, formError);
-      }
+          //Loops through the username class and run the validation test on it
+          for (let i = 0; i < testUserName.length; i++) {
+            let values = testUserName[i].value;
+            userNameLengthCheck(values, 8, formError);
+            userNameLetterCheck(values, formError);
+          }
 
-      //Loops through the password class and run the validation test on it
-      for (let i = 0; i < testPassword.length; i++) {
-        let values = testPassword[i].value;
-        passwordCheck(values, formError);
-      }
+          //Loops through the password class and run the validation test on it
+          for (let i = 0; i < testPassword.length; i++) {
+            let values = testPassword[i].value;
+            passwordCheck(values, formError);
+          }
 
-      //Loops through the numeric class and run the validation test on it
-      for (let i = 0; i < testNumeric.length; i++) {
-        let values = testNumeric[i].value;
-        numberCheck(values, formError);
-      }
+          //Loops through the numeric class and run the validation test on it
+          for (let i = 0; i < testNumeric.length; i++) {
+            let values = testNumeric[i].value;
+            numberCheck(values, formError);
+          }
 
-      //Loops through the required_size class and run the validation test on it
-      for (let i = 0; i < testSize.length; i++) {
-        let minLength = testSize[i].getAttribute("minlength");
-        let values = testSize[i].value;
-        lengthCheck(values, minLength, formError);
-      }
+          //Loops through the required_size class and run the validation test on it
+          for (let i = 0; i < testSize.length; i++) {
+            let minLength = testSize[i].getAttribute("minlength");
+            let values = testSize[i].value;
+            lengthCheck(values, minLength, formError);
+          }
 
-      //Loops through the phone class and run the validation test on it
-      for (let i = 0; i < testPhone.length; i++) {
-        let values = testPhone[i].value;
-        phoneNumberCheck(values, formError);
-      }
+          //Loops through the phone class and run the validation test on it
+          for (let i = 0; i < testPhone.length; i++) {
+            let values = testPhone[i].value;
+            phoneNumberCheck(values, formError);
+          }
 
-      //Loops through the date class and run the validation test on it
-      for (let i = 0; i < testDate.length; i++) {
-        let values = testDate[i].value;
-        dateCheck(values, formError);
-      }
-    });
-  });
+          //Loops through the date class and run the validation test on it
+          for (let i = 0; i < testDate.length; i++) {
+            let values = testDate[i].value;
+            dateCheck(values, formError);
+          }
+        })
+      );
+    })
+  );
 };
 storeVariables();
