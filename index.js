@@ -172,6 +172,15 @@ const storeVariables = () => {
     element.addEventListener("click", function (element) {
       let currentForm = element.target.closest("form");
       currentForm.addEventListener("submit", formValidationCheck);
+      //grabs classes of that form the user clicks on
+      let testRequired = currentForm.querySelectorAll(".required");
+      let testAlphabetic = currentForm.querySelectorAll(".alphabetic");
+      let testUserName = currentForm.querySelectorAll(".username");
+      let testPassword = currentForm.querySelectorAll(".password");
+      let testNumeric = currentForm.querySelectorAll(".numeric");
+      let testSize = currentForm.querySelectorAll(".required_size");
+      let testPhone = currentForm.querySelectorAll(".phone");
+      let testDate = currentForm.querySelectorAll(".date");
     });
   });
 };
