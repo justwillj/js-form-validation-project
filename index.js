@@ -40,6 +40,9 @@ const containAlphanumeric = (value) => {
   return /^[a-z0-9]+$/i.test(value);
 };
 
+/**
+ * Stores all of our ul and li elements so er are not using global variables
+ */
 const storeVariables = () => {
   // create error ul elements
   let errorUlOne = document.createElement("ul");
