@@ -138,6 +138,12 @@ const storeVariables = () => {
     }
   };
 
+  /**
+   * Checks the input length to make sure it is greater the min length attributes for that input
+   * @param {number} value - The input value length of characters
+   * @param {number} number - The min length attributes in the html page
+   * @param {HTMLElemnt} errorDiv - The error div above the form the user is working on
+   */
   const lengthCheck = (value, number, errorDiv) => {
     if (value.length < number && value !== "") {
       errorLengthCheck.innerHTML =
