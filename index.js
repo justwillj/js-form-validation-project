@@ -73,7 +73,7 @@ const storeVariables = () => {
     }
   };
 
-  const userNameletterCheck = (value, errorDiv) => {
+  const userNameLetterCheck = (value, errorDiv) => {
     if (containLetters(value) === false && value !== "") {
       errorUserLetterCheck.innerHTML =
         "Username fields must contain only alphanumeric characters.";
@@ -197,6 +197,13 @@ const storeVariables = () => {
       for (let i = 0; i < testAlphabetic.length; i++) {
         let values = testAlphabetic[i].value;
         letterCheck(values, formError);
+      }
+
+      //Loops through the username class and run the validation test on it
+      for (let i = 0; i < testUserName.length; i++) {
+        let values = testUserName[i].value;
+        userNameLengthCheck(values, 8, formError);
+        userNameLetterCheck(values, formError);
       }
     });
   });
