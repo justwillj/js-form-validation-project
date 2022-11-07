@@ -106,7 +106,10 @@ const storeVariables = () => {
    * @param {HTMLElement} errorDiv - The error div above the form the user is working on
    */
   const numberCheck = (value, errorDiv) => {
-    if (!/^[0-9]+$/.test(value) && value !== "") {
+    if (
+      (!/^[0-9]+$/.test(value) && value !== "") ||
+      whiteSpaceCheck(value) === true
+    ) {
       errorNumberCheck.innerHTML =
         "Numeric fields must be a series of numbers.";
       errorUlFour.appendChild(errorNumberCheck);
