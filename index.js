@@ -224,6 +224,12 @@ const storeVariables = () => {
         let values = testSize[i].value;
         lengthCheck(values, minLength, formError);
       }
+
+      //Loops through the phone class and run the validation test on it
+      for (let i = 0; i < testPhone.length; i++) {
+        let values = testPhone[i].value;
+        phoneNumberCheck(values, formError);
+      }
     });
   });
 };
