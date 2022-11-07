@@ -229,6 +229,7 @@ const storeVariables = () => {
   //const formValidationCheck = (event) => {};
 
   // Detect which form is the closest to the validate button the user clicks on
+  //https://stackoverflow.com/questions/70427235/how-to-target-a-specific-form-on-submit-if-multiple-forms-are-present-with-same
   document.querySelectorAll("input[type=submit]").forEach(
     (formGrab = (element) => {
       element.addEventListener(
