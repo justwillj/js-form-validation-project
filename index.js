@@ -70,7 +70,11 @@ const storeVariables = () => {
    * @param {HTMLElement} errorDiv - The error div above the form the user is working on
    */
   const letterCheck = (value, errorDiv) => {
-    if (!/^[a-zA-Z]*$/g.test(value) && value !== "") {
+    if (
+      !/^[a-zA-Z]*$/g.test(value) &&
+      value !== "" &&
+      whiteSpaceCheck(value) === true
+    ) {
       errorLetterCheck.innerHTML =
         "Alphabetic fields must be a series of alphabetic characters.";
       errorUlTwo.appendChild(errorLetterCheck);
