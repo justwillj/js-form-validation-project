@@ -122,6 +122,12 @@ const storeVariables = () => {
     }
   };
 
+  /**
+   * Checks the input value of the username class to make sure is greater then 8
+   * @param {number} value - the input string value for the input box the user is working on
+   * @param {number} number - The length the input needs to be
+   * @param {HTMLElement} errorDiv - The error div above the form the user is working on
+   */
   const userNameLengthCheck = (value, number, errorDiv) => {
     if (value.length < number && value !== "") {
       errorUserLengthCheck.innerHTML =
