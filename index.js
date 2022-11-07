@@ -163,28 +163,40 @@ const storeVariables = () => {
    */
   const passwordCheck = (value, errorDiv) => {
     // Checks for lowercase
-    if (value.search(/[a-z]/) < 0 && value !== "") {
+    if (
+      (value.search(/[a-z]/) < 0 && value !== "") ||
+      whiteSpaceCheck(value) === true
+    ) {
       errorPasswordCheck.innerHTML =
         "Password fields must contain one or more of each of the following types: uppercase letters, lowercase letters, numbers, special characters.";
       errorUlSeven.appendChild(errorPasswordCheck);
       errorDiv.appendChild(errorUlSeven);
       event.preventDefault();
       // Checks for uppercase
-    } else if (value.search(/[A-Z]/) < 0 && value !== "") {
+    } else if (
+      (value.search(/[A-Z]/) < 0 && value !== "") ||
+      whiteSpaceCheck(value) === true
+    ) {
       errorPasswordCheck.innerHTML =
         "Password fields must contain one or more of each of the following types: uppercase letters, lowercase letters, numbers, special characters.";
       errorUlSeven.appendChild(errorPasswordCheck);
       errorDiv.appendChild(errorUlSeven);
       event.preventDefault();
       // Checks for number
-    } else if (value.search(/[0-9]/) < 0 && value !== "") {
+    } else if (
+      (value.search(/[0-9]/) < 0 && value !== "") ||
+      whiteSpaceCheck(value) === true
+    ) {
       errorPasswordCheck.innerHTML =
         "Password fields must contain one or more of each of the following types: uppercase letters, lowercase letters, numbers, special characters.";
       errorUlSeven.appendChild(errorPasswordCheck);
       errorDiv.appendChild(errorUlSeven);
       event.preventDefault();
       // Checks for special character
-    } else if (specialCharCheck(value) === false && value !== "") {
+    } else if (
+      (specialCharCheck(value) === false && value !== "") ||
+      whiteSpaceCheck(value) === true
+    ) {
       errorPasswordCheck.innerHTML =
         "Password fields must contain one or more of each of the following types: uppercase letters, lowercase letters, numbers, special characters.";
       errorUlSeven.appendChild(errorPasswordCheck);
