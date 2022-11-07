@@ -144,7 +144,10 @@ const storeVariables = () => {
    * @param {HTMLElement} errorDiv - The error div above the form the user is working on
    */
   const lengthCheck = (value, number, errorDiv) => {
-    if (value.length < number && value !== "") {
+    if (
+      (value.length < number && value !== "") ||
+      whiteSpaceCheck(value) === true
+    ) {
       errorLengthCheck.innerHTML =
         "Required_size field lengths must exactly match the minlength attribute of that field.";
       errorUlSix.appendChild(errorLengthCheck);
