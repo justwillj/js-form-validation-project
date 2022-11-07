@@ -71,8 +71,7 @@ const storeVariables = () => {
    */
   const letterCheck = (value, errorDiv) => {
     if (
-      !/^[a-zA-Z]*$/g.test(value) &&
-      value !== "" &&
+      (!/^[a-zA-Z]*$/g.test(value) && value !== "") ||
       whiteSpaceCheck(value) === true
     ) {
       errorLetterCheck.innerHTML =
@@ -89,7 +88,10 @@ const storeVariables = () => {
    * @param {HTMLElement} errorDiv - The error div above the form the user is working on
    */
   const userNameLetterCheck = (value, errorDiv) => {
-    if (containAlphanumeric(value) === false && value !== "") {
+    if (
+      (containAlphanumeric(value) === false && value !== "") ||
+      whiteSpaceCheck(value) === true
+    ) {
       errorUserLetterCheck.innerHTML =
         "Username fields must contain only alphanumeric characters.";
       errorUlThree.appendChild(errorUserLetterCheck);
