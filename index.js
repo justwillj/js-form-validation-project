@@ -167,4 +167,11 @@ const storeVariables = () => {
   };
 
   const formValidationCheck = (event) => {};
+
+  document.querySelectorAll("input[type=submit]").forEach(function (element) {
+    element.addEventListener("click", function (element) {
+      let currentForm = element.target.closest("form");
+      currentForm.addEventListener("submit", formValidationCheck);
+    });
+  });
 };
