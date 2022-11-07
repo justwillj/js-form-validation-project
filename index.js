@@ -172,6 +172,7 @@ const storeVariables = () => {
     element.addEventListener("click", function (element) {
       let currentForm = element.target.closest("form");
       currentForm.addEventListener("submit", formValidationCheck);
+
       //grabs classes of that form the user clicks on
       let testRequired = currentForm.querySelectorAll(".required");
       let testAlphabetic = currentForm.querySelectorAll(".alphabetic");
@@ -181,6 +182,10 @@ const storeVariables = () => {
       let testSize = currentForm.querySelectorAll(".required_size");
       let testPhone = currentForm.querySelectorAll(".phone");
       let testDate = currentForm.querySelectorAll(".date");
+
+      // Displays the error messages into the current placement
+      let formError =
+        currentForm.parentElement.getElementsByClassName("errors")[0];
     });
   });
 };
