@@ -226,7 +226,7 @@ const storeVariables = () => {
     }
   };
 
-  const formValidationCheck = (event) => {};
+  //const formValidationCheck = (event) => {};
 
   // Detect which form is the closest to the validate button the user clicks on
   document.querySelectorAll("input[type=submit]").forEach(
@@ -235,7 +235,7 @@ const storeVariables = () => {
         "click",
         (formAdd = (element) => {
           let currentForm = element.target.closest("form");
-          currentForm.addEventListener("submit", formValidationCheck);
+          //currentForm.addEventListener("submit", formValidationCheck);
 
           //grabs classes of that form the user clicks on
           let testRequired = currentForm.querySelectorAll(".required");
