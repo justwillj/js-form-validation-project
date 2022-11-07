@@ -142,7 +142,7 @@ const storeVariables = () => {
    * Checks the input length to make sure it is greater the min length attributes for that input
    * @param {number} value - The input value length of characters
    * @param {number} number - The min length attributes in the html page
-   * @param {HTMLElemnt} errorDiv - The error div above the form the user is working on
+   * @param {HTMLElement} errorDiv - The error div above the form the user is working on
    */
   const lengthCheck = (value, number, errorDiv) => {
     if (value.length < number && value !== "") {
@@ -154,6 +154,11 @@ const storeVariables = () => {
     }
   };
 
+  /**
+   * Checks the input value for the password class to make sure it contains one of the following: Lower case, Upper Case, Number, Special Character
+   * @param {string} value - The input string value for the input box the user is working on
+   * @param {HTMLElement} errorDiv - The error div above the form the user is working on
+   */
   const passwordCheck = (value, errorDiv) => {
     if (value.search(/[a-z]/) < 0 && value !== "") {
       errorPasswordCheck.innerHTML =
