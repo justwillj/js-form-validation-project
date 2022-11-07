@@ -207,6 +207,11 @@ const storeVariables = () => {
     }
   };
 
+  /**
+   * Checks through the input value for the date class to make sure it matches the correct format
+   * @param {string} value - The input string value for the input box the user is working on
+   * @param {HTMLElement} errorDiv - The error div above the form the user is working on
+   */
   const dateCheck = (value, errorDiv) => {
     let dateCheck = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/(19|20)\d{2}$/;
     if (dateCheck.test(value) === false && value !== "") {
