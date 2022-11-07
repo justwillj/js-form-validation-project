@@ -53,6 +53,12 @@ const storeVariables = () => {
   let errorPasswordCheck = document.createElement("li");
   let errorPhoneCheck = document.createElement("li");
   let errorDateCheck = document.createElement("li");
+
+  /**
+   * Checks the input value of the required class and checks to see if it contains spaces or white spaces in it
+   * @param {string} value - The input string value for the input box the user is working on
+   * @param {HTMLElement} errorDiv - The error div above the form the user is working on
+   */
   const requiredCheck = (value, errorDiv) => {
     if (whiteSpaceCheck(value) === true || value === "") {
       errorRequiredCheck.innerHTML =
