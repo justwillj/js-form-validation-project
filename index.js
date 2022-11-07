@@ -205,6 +205,12 @@ const storeVariables = () => {
         userNameLengthCheck(values, 8, formError);
         userNameLetterCheck(values, formError);
       }
+
+      //Loops through the password class and run the validation test on it
+      for (let i = 0; i < testPassword.length; i++) {
+        let values = testPassword[i].value;
+        passwordCheck(values, formError);
+      }
     });
   });
 };
