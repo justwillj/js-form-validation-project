@@ -160,8 +160,8 @@ const storeVariables = () => {
     if (dateCheck.test(value) === false && value !== "") {
       errorDateCheck.innerHTML =
         "Date fields must match the format of XX/XX/XXXX.";
-      errorUl8.appendChild(errorDateCheck);
-      errorDiv.appendChild(errorUl8);
+      errorUlNine.appendChild(errorDateCheck);
+      errorDiv.appendChild(errorUlNine);
       event.preventDefault();
     }
   };
@@ -186,6 +186,14 @@ const storeVariables = () => {
       // Displays the error messages into the current placement
       let formError =
         currentForm.parentElement.getElementsByClassName("errors")[0];
+
+      //Loops through the required class and run the validation test on it
+      for (let i = 0; i < testRequired.length; i++) {
+        let values = testRequired[i].value;
+        // console.log(values);
+        requiredCheck(values, formError);
+      }
     });
   });
 };
+storeVariables();
