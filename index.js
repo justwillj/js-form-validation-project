@@ -1,7 +1,7 @@
 /**
  * Checks through the input value too see if it contains letters or not
  * @param {string} value - The input string of the form the user is working on
- * @returns - Gives a true of false value based off if there is letters or not
+ * @returns {boolean} - Gives a true of false value based off if there is letters or not
  */
 const containLetters = (value) => {
   return /[a-zA-Z]/.test(value);
@@ -9,7 +9,7 @@ const containLetters = (value) => {
 /**
  * Checks through the input value too see if it contains number or not
  * @param {number} value - The input string of the form the user is working on
- * @returns - Gives a true of false value based off if there is numbers or not
+ * @returns {boolean} - Gives a true of false value based off if there is numbers or not
  */
 const containNumber = (value) => {
   return /[0-9]/.test(value);
@@ -17,7 +17,7 @@ const containNumber = (value) => {
 /**
  * Checks through the input value too see if it white spaces or not
  * @param {string} value - The input string of the form the user is working on
- * @returns - Gives a true of false value based off if there is numbers or not
+ * @returns {boolean} - Gives a true of false value based off if there is numbers or not
  */
 const whiteSpaceCheck = (value) => {
   return /\s/.test(value);
@@ -25,7 +25,7 @@ const whiteSpaceCheck = (value) => {
 /**
  * Checks through the input value too see if it has special characters or not
  * @param {string} value - The input string of the form the user is working on
- * @returns  - Gives a true of false value based off if there is special characters or not
+ * @returns {boolean} - Gives a true of false value based off if there is special characters or not
  */
 const specialCharCheck = (value) => {
   let specialCharacter = /(?=.*[!@#$%^&*])/;
@@ -34,14 +34,14 @@ const specialCharCheck = (value) => {
 /**
  * Checks through the input value too see if it contains alphanumeric or not
  * @param {string} value - The input string of the form the user is working on
- * @returns - Gives a true of false value based off if there is alphanumeric value or not
+ * @returns {boolean} - Gives a true of false value based off if there is alphanumeric value or not
  */
 const containAlphanumeric = (value) => {
   return /^[a-z0-9]+$/i.test(value);
 };
 
 const storeVariables = () => {
-  // create error elements
+  // create error ul elements
   let errorUlOne = document.createElement("ul");
   let errorUlTwo = document.createElement("ul");
   let errorUlThree = document.createElement("ul");
@@ -51,7 +51,7 @@ const storeVariables = () => {
   let errorUlSeven = document.createElement("ul");
   let errorUlEight = document.createElement("ul");
   let errorUlNine = document.createElement("ul");
-  //error messages for each of the different functions
+  //error messages for each of the different validation functions
   let errorRequiredCheck = document.createElement("li");
   let errorLetterCheck = document.createElement("li");
   let errorUserLetterCheck = document.createElement("li");
@@ -251,6 +251,7 @@ const storeVariables = () => {
           //Loops through the required class and run the validation test on it
           for (let i = 0; i < testRequired.length; i++) {
             let values = testRequired[i].value;
+            console.log(values);
             requiredCheck(values, formError);
           }
 
