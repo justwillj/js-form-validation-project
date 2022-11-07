@@ -190,8 +190,13 @@ const storeVariables = () => {
       //Loops through the required class and run the validation test on it
       for (let i = 0; i < testRequired.length; i++) {
         let values = testRequired[i].value;
-        // console.log(values);
         requiredCheck(values, formError);
+      }
+
+      //Loops through the alphabetic class and run the validation test on it
+      for (let i = 0; i < testAlphabetic.length; i++) {
+        let values = testAlphabetic[i].value;
+        letterCheck(values, formError);
       }
     });
   });
