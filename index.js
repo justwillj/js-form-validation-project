@@ -230,6 +230,12 @@ const storeVariables = () => {
         let values = testPhone[i].value;
         phoneNumberCheck(values, formError);
       }
+
+      //Loops through the date class and run the validation test on it
+      for (let i = 0; i < testDate.length; i++) {
+        let values = testDate[i].value;
+        dateCheck(values, formError);
+      }
     });
   });
 };
