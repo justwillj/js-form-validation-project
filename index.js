@@ -234,8 +234,7 @@ const storeVariables = () => {
           let testDate = currentForm.querySelectorAll(".date");
 
           // Displays the error messages into the current placement
-          let formError =
-            currentForm.parentElement.getElementsByClassName("errors")[0];
+          let formError = currentForm.parentElement.querySelector(".errors");
 
           //Loops through the required class and run the validation test on it
           for (let i = 0; i < testRequired.length; i++) {
