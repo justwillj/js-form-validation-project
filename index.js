@@ -243,18 +243,21 @@ const storeVariables = () => {
     }
   };
 
-  //const formValidationCheck = (event) => {};
-
   // Detect which form is the closest to the validate button the user clicks on
   //https://stackoverflow.com/questions/70427235/how-to-target-a-specific-form-on-submit-if-multiple-forms-are-present-with-same
   document.querySelectorAll("input[type=submit]").forEach(
+    /**
+     * Grabs the closest form of the validate button the user clicks on
+     */
     (formGrab = (element) => {
       element.addEventListener(
         "click",
+        /**
+         * Runs all of the different validation checks on each of the classes when the user click on a validate button
+         */
         (formAdd = (element) => {
           //Grabs the closest form to the validate button
           let currentForm = element.target.closest("form");
-          //currentForm.addEventListener("submit", formValidationCheck);
 
           //grabs classes of that form the user clicks on
           let testRequired = currentForm.querySelectorAll(".required");
@@ -272,7 +275,6 @@ const storeVariables = () => {
           //Loops through the required class and run the validation test on it
           for (let i = 0; i < testRequired.length; i++) {
             let values = testRequired[i].value;
-            console.log(values);
             requiredCheck(values, formError);
           }
 
