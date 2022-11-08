@@ -1,5 +1,5 @@
 /**
- * Checks through the input value too see if it white spaces or not
+ * Checks through the input value too see if it has white spaces or not
  * @param {string} value - The input string of the form the user is working on
  * @returns {boolean} - Gives a true of false value based off if there is numbers or not
  */
@@ -7,7 +7,7 @@ const whiteSpaceCheck = (value) => {
   return /\s/.test(value);
 };
 /**
- * Checks through the input value too see if it has special characters or not
+ * Checks through the input value to see if it has special characters or not
  * @param {string} value - The input string of the form the user is working on
  * @returns {boolean} - Gives a true of false value based off if there is special characters or not
  */
@@ -16,7 +16,7 @@ const specialCharCheck = (value) => {
   return specialCharacter.test(value);
 };
 /**
- * Checks through the input value too see if it contains alphanumeric or not
+ * Checks through the input value to see if it contains alphanumeric or not
  * @param {string} value - The input string of the form the user is working on
  * @returns {boolean} - Gives a true of false value based off if there is alphanumeric value or not
  */
@@ -25,7 +25,7 @@ const containAlphanumeric = (value) => {
 };
 
 /**
- * Stores all of our ul and li elements so er are not using global variables
+ * Stores all of our ul and li elements so errors are not using global variables
  */
 const storeVariables = () => {
   // create error ul elements
@@ -50,7 +50,7 @@ const storeVariables = () => {
   let errorDateCheck = document.createElement("li");
 
   /**
-   * Checks the input value of the required class and checks to see if it contains spaces or white spaces in it
+   * Checks the input value of the required class and checks to see if it contains empty string or white spaces in it
    * @param {string} value - The input string value for the input box the user is working on
    * @param {HTMLElement} errorDiv - The error div above the form the user is working on
    */
@@ -119,7 +119,7 @@ const storeVariables = () => {
   };
 
   /**
-   * Checks the input value of the username class to make sure is greater then 8
+   * Checks the input value of the username class to make sure its length is greater then 8
    * @param {number} value - the input string value for the input box the user is working on
    * @param {number} number - The length the input needs to be
    * @param {HTMLElement} errorDiv - The error div above the form the user is working on
