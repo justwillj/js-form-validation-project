@@ -279,8 +279,9 @@ const storeVariables = () => {
           }
 
           //Loops through the alphabetic class and run the validation test on it
-          for (let i = 0; i < testAlphabetic.length; i++) {
-            let values = testAlphabetic[i].value;
+          for (let alphabetic of testAlphabetic) {
+            let values = alphabetic.value;
+            console.log(values);
             letterCheck(values, formError);
           }
 
