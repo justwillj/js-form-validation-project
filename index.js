@@ -288,14 +288,13 @@ const storeVariables = () => {
           //Loops through the username class and run the validation test on it
           for (let username of testUserName) {
             let values = username.value;
-            console.log(values);
             userNameLengthCheck(values, 8, formError);
             userNameLetterCheck(values, formError);
           }
 
           //Loops through the password class and run the validation test on it
-          for (let i = 0; i < testPassword.length; i++) {
-            let values = testPassword[i].value;
+          for (let password of testPassword) {
+            let values = password.value;
             passwordCheck(values, formError);
           }
 
