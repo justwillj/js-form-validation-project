@@ -29,15 +29,15 @@ const containAlphanumeric = (value) => {
  */
 const storeVariables = () => {
   // create error ul elements
-  let errorUlOne = document.createElement("ul");
-  let errorUlTwo = document.createElement("ul");
-  let errorUlThree = document.createElement("ul");
-  let errorUlFour = document.createElement("ul");
-  let errorUlFive = document.createElement("ul");
-  let errorUlSix = document.createElement("ul");
-  let errorUlSeven = document.createElement("ul");
-  let errorUlEight = document.createElement("ul");
-  let errorUlNine = document.createElement("ul");
+  let errorUlRequired = document.createElement("ul");
+  let errorUlLetter = document.createElement("ul");
+  let errorUlUserLetter = document.createElement("ul");
+  let errorUlNumber = document.createElement("ul");
+  let errorUlUserLength = document.createElement("ul");
+  let errorUlLength = document.createElement("ul");
+  let errorUlPassword = document.createElement("ul");
+  let errorUlPhone = document.createElement("ul");
+  let errorUlDate = document.createElement("ul");
   //error messages for each of the different validation functions
   let errorRequiredCheck = document.createElement("li");
   let errorLetterCheck = document.createElement("li");
@@ -58,8 +58,8 @@ const storeVariables = () => {
     if (whiteSpaceCheck(value) === true || value === "") {
       errorRequiredCheck.innerHTML =
         "Required fields must have a value that is not empty or whitespace.";
-      errorUlOne.appendChild(errorRequiredCheck);
-      errorDiv.appendChild(errorUlOne);
+      errorUlRequired.appendChild(errorRequiredCheck);
+      errorDiv.appendChild(errorUlRequired);
       event.preventDefault();
     }
   };
@@ -76,8 +76,8 @@ const storeVariables = () => {
     ) {
       errorLetterCheck.innerHTML =
         "Alphabetic fields must be a series of alphabetic characters.";
-      errorUlTwo.appendChild(errorLetterCheck);
-      errorDiv.appendChild(errorUlTwo);
+      errorUlLetter.appendChild(errorLetterCheck);
+      errorDiv.appendChild(errorUlLetter);
       event.preventDefault();
     }
   };
@@ -94,8 +94,8 @@ const storeVariables = () => {
     ) {
       errorUserLetterCheck.innerHTML =
         "Username fields must contain only alphanumeric characters.";
-      errorUlThree.appendChild(errorUserLetterCheck);
-      errorDiv.appendChild(errorUlThree);
+      errorUlUserLetter.appendChild(errorUserLetterCheck);
+      errorDiv.appendChild(errorUlUserLetter);
       event.preventDefault();
     }
   };
@@ -112,8 +112,8 @@ const storeVariables = () => {
     ) {
       errorNumberCheck.innerHTML =
         "Numeric fields must be a series of numbers.";
-      errorUlFour.appendChild(errorNumberCheck);
-      errorDiv.appendChild(errorUlFour);
+      errorUlNumber.appendChild(errorNumberCheck);
+      errorDiv.appendChild(errorUlNumber);
       event.preventDefault();
     }
   };
@@ -131,8 +131,8 @@ const storeVariables = () => {
     ) {
       errorUserLengthCheck.innerHTML =
         "Username fields must contain at least 8 characters.";
-      errorUlFive.appendChild(errorUserLengthCheck);
-      errorDiv.appendChild(errorUlFive);
+      errorUlUserLength.appendChild(errorUserLengthCheck);
+      errorDiv.appendChild(errorUlUserLength);
       event.preventDefault();
     }
   };
@@ -150,8 +150,8 @@ const storeVariables = () => {
     ) {
       errorLengthCheck.innerHTML =
         "Required_size field lengths must exactly match the minlength attribute of that field.";
-      errorUlSix.appendChild(errorLengthCheck);
-      errorDiv.appendChild(errorUlSix);
+      errorUlLength.appendChild(errorLengthCheck);
+      errorDiv.appendChild(errorUlLength);
       event.preventDefault();
     }
   };
@@ -169,8 +169,8 @@ const storeVariables = () => {
     ) {
       errorPasswordCheck.innerHTML =
         "Password fields must contain one or more of each of the following types: uppercase letters, lowercase letters, numbers, special characters.";
-      errorUlSeven.appendChild(errorPasswordCheck);
-      errorDiv.appendChild(errorUlSeven);
+      errorUlPassword.appendChild(errorPasswordCheck);
+      errorDiv.appendChild(errorUlPassword);
       event.preventDefault();
       // Checks for uppercase
     } else if (
@@ -179,8 +179,8 @@ const storeVariables = () => {
     ) {
       errorPasswordCheck.innerHTML =
         "Password fields must contain one or more of each of the following types: uppercase letters, lowercase letters, numbers, special characters.";
-      errorUlSeven.appendChild(errorPasswordCheck);
-      errorDiv.appendChild(errorUlSeven);
+      errorUlPassword.appendChild(errorPasswordCheck);
+      errorDiv.appendChild(errorUlPassword);
       event.preventDefault();
       // Checks for number
     } else if (
@@ -189,8 +189,8 @@ const storeVariables = () => {
     ) {
       errorPasswordCheck.innerHTML =
         "Password fields must contain one or more of each of the following types: uppercase letters, lowercase letters, numbers, special characters.";
-      errorUlSeven.appendChild(errorPasswordCheck);
-      errorDiv.appendChild(errorUlSeven);
+      errorUlPassword.appendChild(errorPasswordCheck);
+      errorDiv.appendChild(errorUlPassword);
       event.preventDefault();
       // Checks for special character
     } else if (
@@ -199,8 +199,8 @@ const storeVariables = () => {
     ) {
       errorPasswordCheck.innerHTML =
         "Password fields must contain one or more of each of the following types: uppercase letters, lowercase letters, numbers, special characters.";
-      errorUlSeven.appendChild(errorPasswordCheck);
-      errorDiv.appendChild(errorUlSeven);
+      errorUlPassword.appendChild(errorPasswordCheck);
+      errorDiv.appendChild(errorUlPassword);
       event.preventDefault();
     }
   };
@@ -218,8 +218,8 @@ const storeVariables = () => {
     ) {
       errorPhoneCheck.innerHTML =
         "Phone fields must match the format of XXX-XXX-XXXX.";
-      errorUlEight.appendChild(errorPhoneCheck);
-      errorDiv.appendChild(errorUlEight);
+      errorUlPhone.appendChild(errorPhoneCheck);
+      errorDiv.appendChild(errorUlPhone);
       event.preventDefault();
     }
   };
@@ -237,8 +237,8 @@ const storeVariables = () => {
     ) {
       errorDateCheck.innerHTML =
         "Date fields must match the format of XX/XX/XXXX.";
-      errorUlNine.appendChild(errorDateCheck);
-      errorDiv.appendChild(errorUlNine);
+      errorUlDate.appendChild(errorDateCheck);
+      errorDiv.appendChild(errorUlDate);
       event.preventDefault();
     }
   };
