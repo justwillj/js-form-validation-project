@@ -312,9 +312,10 @@ const storeVariables = () => {
           }
 
           //Loops through the phone class and run the validation test on it
-          for (let i = 0; i < testPhone.length; i++) {
-            let values = testPhone[i].value;
+          for (let phone of testPhone) {
+            let values = phone.value;
             phoneNumberCheck(values, formError);
+            console.log(values);
           }
 
           //Loops through the date class and run the validation test on it
