@@ -305,9 +305,9 @@ const storeVariables = () => {
           }
 
           //Loops through the required_size class and run the validation test on it
-          for (let i = 0; i < testSize.length; i++) {
-            let minLength = testSize[i].getAttribute("minlength");
-            let values = testSize[i].value;
+          for (let length of testSize) {
+            let minLength = length.getAttribute("minlength");
+            let values = length.value;
             lengthCheck(values, minLength, formError);
           }
 
