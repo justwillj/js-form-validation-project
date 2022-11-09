@@ -299,8 +299,8 @@ const storeVariables = () => {
           }
 
           //Loops through the numeric class and run the validation test on it
-          for (let i = 0; i < testNumeric.length; i++) {
-            let values = testNumeric[i].value;
+          for (let numeric of testNumeric) {
+            let values = numeric.value;
             numberCheck(values, formError);
           }
 
