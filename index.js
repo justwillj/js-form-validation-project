@@ -273,8 +273,8 @@ const storeVariables = () => {
           let formError = currentForm.parentElement.querySelector(".errors");
 
           //Loops through the required class and run the validation test on it
-          for (let i = 0; i < testRequired.length; i++) {
-            let values = testRequired[i].value;
+          for (let required of testRequired) {
+            let values = required.value;
             requiredCheck(values, formError);
           }
 
